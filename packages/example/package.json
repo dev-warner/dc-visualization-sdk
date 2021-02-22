@@ -1,0 +1,28 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Joe Warner <jwarner@amplience.com>",
+  "homepage": "",
+  "license": "ISC",
+  "scripts": {
+    "serve": "parcel -p 8080 public/index.html",
+    "serve:visualizations": "parcel -p 8080 public/vis.html",
+    "visualizations": "NODE_ENV=visualisation yarn run serve:visualizations"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "@dc-visualization-sdk/cli": "^1.0.0",
+    "@dc-visualization-sdk/core": "^1.0.1",
+    "dc-delivery-sdk-js": "^0.7.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
