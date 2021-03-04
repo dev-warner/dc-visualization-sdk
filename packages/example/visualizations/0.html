@@ -9,9 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
 
-    
-      <link rel="stylesheet" href="../public/style.css">
-    
+    <link rel="stylesheet" href="../public/style.css" />
   </head>
   <body>
     <div id="root"></div>
@@ -19,13 +17,19 @@
     <script src="../src/Button.visualization.js"></script>
 
     <script>
-      const connection = new mc.ClientConnection();
+      const visualization = Visualization.create();
+      const context = visualization.context();
 
-      connection.init();
-      connection.on("data", (content) => {
-        console.log(content)
+      const Compoment = {
+        'http://schema2.com': Hero,
+        'http://schema.com': Button,
+        'http://schema3.com': Landing,
+      }
+
+      visualization.init();
+      visualization.form.changed(content, => {
         ReactDOM.render(
-          <window.Visualization.component {...content} />,
+          <Button {...content.data} />,
           document.getElementById("root")
         );
       });

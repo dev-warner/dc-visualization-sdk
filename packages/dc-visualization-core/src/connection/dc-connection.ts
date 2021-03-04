@@ -73,7 +73,7 @@ export type ModelChangeHandler<T = any> = (
 export class Visualization {
   connection = new ClientConnection()
 
-  static async create() {
+  static create() {
     const core = new Visualization()
 
     return core
@@ -102,22 +102,6 @@ export class Visualization {
 
     return () => this.connection.on(EVENTS.MODEL_CHANGE, noop)
   }
-
-  /**
-   *
-   * DC
-   *
-   * 'dc-request-config' -> handlers.push ({ id, config })
-   *
-   * handlers - > config  //
-   *
-   *
-   *  {
-   *    '12412124124':  [() => {}, () => {}],
-   *    '124124124124'
-   * }
-   *
-   */
 
   async getContext(): Promise<Context> {
     const context = await this.connection.request<Context>(EVENTS.GET, null, {
