@@ -12,4 +12,4 @@ const locale = new Locale(visualisation.connection)
 const settings = new Settings(visualisation.connection)
 const deliveryKey = new DeliveryKey(visualisation.connection)
 
-export { init, form, locale, settings, deliveryKey }
+export default { init, form, locale, settings, deliveryKey }

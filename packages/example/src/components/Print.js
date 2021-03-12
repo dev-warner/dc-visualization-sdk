@@ -1,9 +1,12 @@
 import React from "react";
 
-export default function Print({ code }) {
+export default function Print({ title, code }) {
   return (
-    <code>
-      <pre>{JSON.stringify(code, null, 2)}</pre>
-    </code>
+    <>
+      {title && <h2>{title}</h2>}
+      <code>
+        <pre>{JSON.stringify(code, null, 2)}</pre>
+      </code>
+    </>
   );
 }

@@ -1,7 +1,4 @@
-export interface IModel<T = any> {
-  locale: string
-  body: T
-}
+export type IModel<T = any> = T
 
 export type ModelChangeDispose = () => void
 

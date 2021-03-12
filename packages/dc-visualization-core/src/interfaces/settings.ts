@@ -1,11 +1,8 @@
 export interface ISettings {
-  hub: IHub
-  preview: IPreview
   contentId: string
   snapshotId: string
   contentTypeId: string
-  selectedDevice: IDevice
-  effectiveContentType: ISchema
+  device: IDevice
   visualization: IVisualizationSetting
 }
 
@@ -17,13 +14,6 @@ export interface IDevice {
   width: number
 }
 
-export interface IHub {
-  name: string
-  id: string
-}
-
-export type ISchema = Record<string, any>
-
 export interface IVisualizationSetting {
   label: string
   default: boolean
@@ -31,9 +21,4 @@ export interface IVisualizationSetting {
   hasLocaleToken: boolean
   templatedUri: string
   actualTemplatedUri: string
-}
-
-export interface IPreview {
-  vse: string
-  contentItemId: string
 }

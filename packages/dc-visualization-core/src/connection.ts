@@ -1,7 +1,11 @@
 import { ClientConnection, MC_EVENTS } from 'message-event-channel'
 
 export class Visualization {
-  public connection = new ClientConnection()
+  public connection = new ClientConnection({
+    connectionTimeout: false,
+    timeout: false,
+    debug: false,
+  })
 
   static create() {
     const core = new Visualization()
